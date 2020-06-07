@@ -152,12 +152,12 @@ return
 !^'::Send, {Ctrl Down}{Right}{Backspace}{Ctrl Up}
 
 ;For Chrome Shorcuts
-;!^j::Send, {Ctrl Down}{PgUp}{Ctrl Up}
-;!^l::Send, {Ctrl Down}{PgDn}{Ctrl Up}
-;!^n::Send, {Ctrl Down}1{Ctrl Up} 
-;!^m::Send, {Ctrl Down}9{Ctrl Up}
-;!^w::Send, {Ctrl Down}w{Ctrl Up}
-;!^z::Send, {Ctrl Down}{Shift Down}T{Shift Up}{Ctrl Up}
+!^j::Send, {Ctrl Down}{PgUp}{Ctrl Up}
+!^l::Send, {Ctrl Down}{PgDn}{Ctrl Up}
+!^n::Send, {Ctrl Down}1{Ctrl Up} 
+!^m::Send, {Ctrl Down}9{Ctrl Up}
+!^w::Send, {Ctrl Down}w{Ctrl Up}
+!^z::Send, {Ctrl Down}{Shift Down}T{Shift Up}{Ctrl Up}
 
 ; In addition to Alt being held, if Shift is also being held, enable hotkeys
 #If GetKeyState("Shift", "P")
