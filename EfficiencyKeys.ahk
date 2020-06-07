@@ -53,9 +53,8 @@ return
 *u::PGUP
 *o::PGDN
 *^!SPACE::Send, {ESCAPE DOWN}{ESCAPE UP}
+*+SPACE::Send, {Home}{SHIFT DOWN}{END}{SHIFT UP}
 
-; For Excel
-*^s::Send, {Ctrl Down}-{Ctrl Up}
 
 #If
 
