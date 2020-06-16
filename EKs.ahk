@@ -41,15 +41,15 @@ Return
 
 
 #If GetKeyState("Alt", "P")
+	!m::Send, {Numpad1}
+	!,::Send, {Numpad2}
+	!.::Send, {Numpad3}
+	!j::Send, {Numpad4}
+	!k::Send, {Numpad5}
+	!l::Send, {Numpad6}
+	!u::Send, {Numpad7}
 	!i::Send, {Numpad8}
 	!o::Send, {Numpad9}
-	!u::Send, {Numpad7}
-	!l::Send, {Numpad6}
-	!k::Send, {Numpad5}
-	!j::Send, {Numpad4}
-	!.::Send, {Numpad3}
-	!,::Send, {Numpad2}
-	!m::Send, {Numpad1}
 	!/::Send, {NumpadDot}
 	!h::Send, {Backspace}
 	!'::Send, {Delete}
@@ -58,6 +58,17 @@ Return
 	!^Space::Send, {Esc}
 	!^h::Send, {CTRL DOWN}{BACKSPACE}{CTRL UP}
 	!^'::Send, {CTRL DOWN}{RIGHT}{BACKSPACE}{CTRL UP}
+	
+	!+m::Send, {!}
+	!+,::Send, {@}
+	!+.::Send, {#}
+	!+j::Send, {$}
+	!+k::Send, {asc 37}
+	!+l::Send, {^}
+	!+u::Send, {&}
+	!+i::Send, {*}
+	!+o::Send, {(}
+	!+Space::Send, {)}
 
 #If GetKeyState("Alt", "P")
 	f & m::Send,{f1}
