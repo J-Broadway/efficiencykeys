@@ -39,6 +39,17 @@ Return
 ;Global Shortcuts
 *^!SPACE::Send, {ESCAPE DOWN}{ESCAPE UP}
 
+#If GetKeyState("Shift", "P") && GetKeyState("Alt", "P")
+	f & m::Send,!{f1}
+	f & ,::Send,!{f2}
+	f & .::Send,!{f3}
+	f & j::Send,!{f4}
+	f & k::Send,!{f5}
+	f & l::Send,!{f6}
+	f & u::Send,!{f7}
+	f & i::Send,!{f8}
+	f & o::Send,!{f9}
+	f & space::Send,!{f10}
 
 #If GetKeyState("Alt", "P")
 	!m::Send, {Numpad1}
@@ -81,7 +92,6 @@ Return
 	f & i::Send,{f8}
 	f & o::Send,{f9}
 	f & space::Send,{f10}
-
 
 #If WinActive("Google Chrome")
 	;For Chrome Shorcuts
