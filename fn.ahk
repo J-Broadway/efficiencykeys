@@ -74,7 +74,7 @@ Return
 	!+,::Send, {@}
 	!+.::Send, {#}
 	!+j::Send, {$}
-	!+k::Send, {asc 37}
+	!+k::Send, {asc 0037}
 	!+l::Send, {^}
 	!+u::Send, {&}
 	!+i::Send, {*}
@@ -93,14 +93,23 @@ Return
 	f & o::Send,{f9}
 	f & space::Send,{f10}
 
-#If WinActive("Google Chrome")
-	;For Chrome Shorcuts
+#If WinActive("ahk_exe chrome.exe") || WinActive("ahk_exe brave.exe") || WinACtive("ahk_exe Exocharts-Pro.exe")
+;For Chrome and Brave Shorcuts
 	!^j::Send, {Ctrl Down}{PgUp}{Ctrl Up}
 	!^l::Send, {Ctrl Down}{PgDn}{Ctrl Up}
 	!^n::Send, {Ctrl Down}1{Ctrl Up} 
 	!^m::Send, {Ctrl Down}9{Ctrl Up}
 	!^w::Send, {Ctrl Dopwn}w{Ctrl Up}
 	!^z::Send, {Ctrl Down}{Shift Down}T{Shift Up}{Ctrl Up}
+	
+; CTRL + SHIFT + PG_UP/PG_DOWN will trigger CTRL + HOME/END	
+	^+PgUp::
+	Send, ^{Home}
+	return
+
+	^+PgDn::
+	Send, ^{End}
+	return
 																	 
 #If flag=1
 	*j::Left
