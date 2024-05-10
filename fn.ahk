@@ -23,20 +23,31 @@ if(flag=0)
 {
 	flag:=1
 	Menu, Tray, Icon, % Path, 4
+	SetTimer, ShowTooltip, 100
 }
 else
 {
 	Menu, Tray, Icon, % Path, 1
 	flag:=0
+	SetTimer, ShowTooltip, Off
+	Tooltip ; Hide the tooltip
+}
+return
+
+ShowTooltip:
+if (flag = 1)
+{
+	MouseGetPos, x, y
+	Tooltip, fn, x+10, y+10
 }
 return
 
 ^+d::
-Suspend ;  very first line
-IsSuspend := !IsSuspend
-Return
+Suspend ; very first line
+isSuspend := !isSuspend
+return
 
-;Global Shortcuts
+; Global Shortcuts
 *^!SPACE::Send, {ESCAPE DOWN}{ESCAPE UP}
 
 #If GetKeyState("Shift", "P") && GetKeyState("Alt", "P")
@@ -69,7 +80,7 @@ Return
 	!^Space::Send, {Esc}
 	!^h::Send, {CTRL DOWN}{BACKSPACE}{CTRL UP}
 	!^'::Send, {CTRL DOWN}{RIGHT}{BACKSPACE}{CTRL UP}
-	
+
 	!+m::Send, {!}
 	!+,::Send, {@}
 	!+.::Send, {#}
@@ -94,15 +105,15 @@ Return
 	f & space::Send,{f10}
 
 #If WinActive("ahk_exe chrome.exe") || WinActive("ahk_exe brave.exe") || WinACtive("ahk_exe Exocharts-Pro.exe")
-;For Chrome and Brave Shorcuts
+; For Chrome and Brave Shorcuts
 	!^j::Send, {Ctrl Down}{PgUp}{Ctrl Up}
 	!^l::Send, {Ctrl Down}{PgDn}{Ctrl Up}
-	!^n::Send, {Ctrl Down}1{Ctrl Up} 
+	!^n::Send, {Ctrl Down}1{Ctrl Up}
 	!^m::Send, {Ctrl Down}9{Ctrl Up}
-	!^w::Send, {Ctrl Dopwn}w{Ctrl Up}
+	!^w::Send, {Ctrl Down}w{Ctrl Up}
 	!^z::Send, {Ctrl Down}{Shift Down}T{Shift Up}{Ctrl Up}
-	
-; CTRL + SHIFT + PG_UP/PG_DOWN will trigger CTRL + HOME/END	
+
+; CTRL + SHIFT + PG_UP/PG_DOWN will trigger CTRL + HOME/END
 	^+PgUp::
 	Send, ^{Home}
 	return
@@ -110,7 +121,7 @@ Return
 	^+PgDn::
 	Send, ^{End}
 	return
-																	 
+
 #If flag=1
 	*j::Left
 	*i::Up
@@ -120,6 +131,6 @@ Return
 	*'::Delete
 	*n::Home
 	*m::End
-	*u::PGUP
-	*o::PGDN
+	*u::PgUp
+	*o::PgDn
 	*+SPACE::Send, {End}{SHIFT DOWN}{Home}{SHIFT UP}
